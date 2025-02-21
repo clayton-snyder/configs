@@ -1,4 +1,0 @@
-# Machine generated. Do not modify.
-latn dflt @ 5412, 5471
-latp dflt @ 6188
-latb dflt @ 6223
