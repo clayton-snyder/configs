@@ -66,7 +66,55 @@ wezterm.on("toggle-colorscheme", function(window, pane)
 end)
 
 -- keymaps
+config.leader = { key = 'Escape', mods = 'SHIFT', timeout_milliseconds = 1000 }
 config.keys = {
+	{
+		key = "h",
+		mods = "LEADER",
+		action = wezterm.action.SplitPane({
+			direction = "Left",
+			size = { Percent = 50 },
+		}),
+	},
+	{
+		key = "j",
+		mods = "LEADER",
+		action = wezterm.action.SplitPane({
+			direction = "Down",
+			size = { Percent = 50 },
+		}),
+	},
+	{
+		key = "k",
+		mods = "LEADER",
+		action = wezterm.action.SplitPane({
+			direction = "Up",
+			size = { Percent = 50 },
+		}),
+	},
+	{
+		key = "l",
+		mods = "LEADER",
+		action = wezterm.action.SplitPane({
+			direction = "Right",
+			size = { Percent = 50 },
+		}),
+	},
+	{
+		key = "t",
+		mods = "LEADER",
+		action = act.SpawnTab "CurrentPaneDomain",
+	},
+	{
+		key = "q",
+		mods = "LEADER",
+		action = act.CloseCurrentTab { confirm = true },
+	},
+	{
+		key = "w",
+		mods = "LEADER",
+		action = act.CloseCurrentPane{ confirm = true },
+	},
 	{
 		key = "Tab",
 		mods = "CTRL",
@@ -98,46 +146,19 @@ config.keys = {
 		action = wezterm.action.ActivatePaneDirection("Right"),
 	},
 	{
-		key = "W",
-		mods = "CTRL|SHIFT|ALT",
-		action = wezterm.action.CloseCurrentPane{ confirm = true },
+		key = ";",
+		mods = "CTRL",
+		action = act.RotatePanes("Clockwise")
+	},
+	{
+		key = ":",
+		mods = "CTRL|SHIFT",
+		action = act.RotatePanes("CounterClockwise")
 	},
 	{
 		key = "E",
 		mods = "CTRL|SHIFT|ALT",
 		action = wezterm.action.EmitEvent("toggle-colorscheme"),
-	},
-	{
-		key = "H",
-		mods = "CTRL|SHIFT|ALT",
-		action = wezterm.action.SplitPane({
-			direction = "Left",
-			size = { Percent = 50 },
-		}),
-	},
-	{
-		key = "J",
-		mods = "CTRL|SHIFT|ALT",
-		action = wezterm.action.SplitPane({
-			direction = "Down",
-			size = { Percent = 50 },
-		}),
-	},
-	{
-		key = "K",
-		mods = "CTRL|SHIFT|ALT",
-		action = wezterm.action.SplitPane({
-			direction = "Up",
-			size = { Percent = 50 },
-		}),
-	},
-	{
-		key = "L",
-		mods = "CTRL|SHIFT|ALT",
-		action = wezterm.action.SplitPane({
-			direction = "Right",
-			size = { Percent = 50 },
-		}),
 	},
 	{
 		key = "H",
@@ -160,7 +181,7 @@ config.keys = {
 		action = act.AdjustPaneSize({ "Right", 5 }),
 	},
 	{ key = "9", mods = "CTRL", action = act.PaneSelect },
-	{ key = ";", mods = "CTRL", action = act.ShowDebugOverlay },
+	{ key = "`", mods = "CTRL", action = act.ShowDebugOverlay },
 	{
 		key = "O",
 		mods = "CTRL|ALT",
@@ -174,9 +195,6 @@ config.keys = {
 			end
 			window:set_config_overrides(overrides)
 		end),
-	},
-	{
-		key = "UpArrow", mods = "SHIFT", action = act.ScrollToPrompt(-1)
 	},
 }
 
