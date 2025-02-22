@@ -2,14 +2,15 @@ general:
   # Commands to run when the WM has started. This is useful for running a
   # script or launching another application.
   # Example: The below command launches Zebar.
-  startup_commands: ['shell-exec zebar']
+  startup_commands: ['shell-exec zebar startup --config-dir %ZEBAR_CONFIG_DIR%']
 
   # Commands to run just before the WM is shutdown.
   # Example: The below command kills Zebar.
   shutdown_commands: ['shell-exec taskkill /IM zebar.exe /F']
 
   # Commands to run after the WM config is reloaded.
-  config_reload_commands: ['shell-exec --hide-window powershell -command "taskkill /IM zebar.exe /F; zebar"']
+#CMS: I use RefreshEnv here so I can see updates to ZEBAR_CONFIG_DIR without restarting glaze.
+  config_reload_commands: ['shell-exec --hide-window cmd /V:ON /C taskkill /IM zebar.exe /F & RefreshEnv && zebar startup --config-dir !ZEBAR_CONFIG_DIR!'] 
 
   # Whether to automatically focus windows underneath the cursor.
   focus_follows_cursor: false
@@ -137,11 +138,11 @@ workspaces:
     display_name: "5 wez-cfg"
     keep_alive: true
   - name: "6"
-    display_name: "extremely extremely long!!!"
+    display_name: "6"
   - name: "7"
-    display_name: "extremely extremely long!!!"
+    display_name: "7"
   - name: "8"
-    display_name: "extremely extremely long!!! EVEN LONGER THAN YOU COULD EVER IMAGINE IN YOUR ENTIRE LIFE"
+    display_name: "8"
   - name: "9"
     display_name: "9 wez-cs"
     keep_alive: true
@@ -169,13 +170,13 @@ binding_modes:
   - name: 'resize'
     keybindings:
       - commands: ['resize --width -2%']
-        bindings: ['h', 'left']
+        bindings: ['h']
       - commands: ['resize --width +2%']
-        bindings: ['l', 'right']
+        bindings: ['l']
       - commands: ['resize --height +2%']
-        bindings: ['k', 'up']
+        bindings: ['k']
       - commands: ['resize --height -2%']
-        bindings: ['j', 'down']
+        bindings: ['j']
       # Press enter/escape to return to default keybindings.
       - commands: ['wm-disable-binding-mode --name resize']
         bindings: ['escape', 'enter']
@@ -183,39 +184,40 @@ binding_modes:
 keybindings:
   # Shift focus in a given direction.
   - commands: ['focus --direction left']
-    bindings: ['alt+h', 'alt+left']
+    bindings: ['alt+h']
   - commands: ['focus --direction right']
-    bindings: ['alt+l', 'alt+right']
+    bindings: ['alt+l']
   - commands: ['focus --direction up']
-    bindings: ['alt+k', 'alt+up']
+    bindings: ['alt+k']
   - commands: ['focus --direction down']
-    bindings: ['alt+j', 'alt+down']
+    bindings: ['alt+j']
 
   # Move focused window in a given direction.
   - commands: ['move --direction left']
-    bindings: ['alt+shift+h', 'alt+shift+left']
+    bindings: ['alt+u']
   - commands: ['move --direction right']
-    bindings: ['alt+shift+l', 'alt+shift+right']
+    bindings: ['alt+p']
   - commands: ['move --direction up']
-    bindings: ['alt+shift+k', 'alt+shift+up']
+    bindings: ['alt+o']
   - commands: ['move --direction down']
-    bindings: ['alt+shift+j', 'alt+shift+down']
+    bindings: ['alt+i']
 
   # Resize focused window by a percentage or pixel amount.
   - commands: ['resize --width -2%']
-    bindings: ['alt+u']
+    bindings: ['alt+shift+h']
   - commands: ['resize --width +2%']
-    bindings: ['alt+p']
+    bindings: ['alt+shift+l']
   - commands: ['resize --height +2%']
-    bindings: ['alt+o']
+    bindings: ['alt+shift+k']
   - commands: ['resize --height -2%']
-    bindings: ['alt+i']
+    bindings: ['alt+shift+j']
 
+#CMS: I don't like this.
   # As an alternative to the resize keybindings above, resize mode enables
   # resizing via arrow keys or HJKL. The binding mode is defined above with
   # the name 'resize'.
-  - commands: ['wm-enable-binding-mode --name resize']
-    bindings: ['alt+r']
+  #  - commands: ['wm-enable-binding-mode --name resize']
+  #  bindings: ['alt+r']
 
   # Disables window management and all other keybindings until alt+shift+p
   # is pressed again.
@@ -243,26 +245,31 @@ keybindings:
   - commands: ['toggle-fullscreen']
     bindings: ['alt+f']
 
+#CMS: GWM has no way to unminimize (???) so you have to alt-tab to get the window back, which is 
+#     a pain if you like to have the taskbar show all windows from all workspaces like me.
   # Minimize focused window.
-  - commands: ['toggle-minimized']
-    bindings: ['alt+m']
+  #- commands: ['toggle-minimized']
+  #  bindings: ['alt+m']
 
   # Close focused window.
   - commands: ['close']
-    bindings: ['alt+shift+q']
+    bindings: ['alt+q']
+  #bindings: ['alt+shift+q']
 
   # Kill GlazeWM process safely.
   - commands: ['wm-exit']
-    bindings: ['alt+shift+escape']
+    bindings: ['alt+shift+end']
 
   # Re-evaluate configuration file.
   - commands: ['wm-reload-config']
-    bindings: ['alt+shift+r']
+    bindings: ['alt+r']
+  #bindings: ['alt+shift+r']
 
   # Redraw all windows.
   - commands: ['wm-redraw']
     bindings: ['alt+shift+w']
 
+#CMS: Can't get shell-exec to take an env var. Maybe a better task for AutoHotkey.
   # Launch CMD terminal. Alternatively, use `shell-exec wt` or
   # `shell-exec %ProgramFiles%/Git/git-bash.exe` to start Windows
   # Terminal and Git Bash respectively.

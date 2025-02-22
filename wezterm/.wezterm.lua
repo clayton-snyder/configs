@@ -15,7 +15,7 @@ config.animation_fps = 1
 config.cursor_blink_rate = 500
 config.term = "xterm-256color" -- Set the terminal type
 
-config.font = wezterm.font("Iosevka Custom")
+config.font = wezterm.font("Iosevka Custom Extended")
 -- config.font = wezterm.font("Monocraft Nerd Font")
 -- config.font = wezterm.font("FiraCode Nerd Font Mono")
 -- config.font = wezterm.font("JetBrains Mono Regular")
@@ -145,8 +145,8 @@ config.keys = {
 		action = act.AdjustPaneSize({ "Left", 5 }),
 	},
 	{
-		key = "J",
-		mods = "CTRL|SHIFT",
+		key = "U",
+		mods = "ALT|SHIFT",
 		action = act.AdjustPaneSize({ "Down", 5 }),
 	},
 	{
@@ -174,6 +174,9 @@ config.keys = {
 			end
 			window:set_config_overrides(overrides)
 		end),
+	},
+	{
+		key = "UpArrow", mods = "SHIFT", action = act.ScrollToPrompt(-1)
 	},
 }
 
