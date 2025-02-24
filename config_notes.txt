@@ -1,3 +1,7 @@
+WEZTERM_CONFIG_FILE
+GLAZEWM_CONFIG_PATH
+
+
 CTRL is for wezterm movement
 LEADER is for wezterm creation/destruction
 ALT is for gwm
@@ -24,7 +28,7 @@ LEADER = Shift|Esc
 (Esc is mapped to CapsLock)
 
 LEADER->T wez new tab
-LEADER->R wez close tab
+LEADER->Q wez close tab
 LEADER->W wez close pane
 
 alt+shift+{1-9} gwm move window to workspace
