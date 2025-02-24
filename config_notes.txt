@@ -1,5 +1,8 @@
-WEZTERM_CONFIG_FILE
-GLAZEWM_CONFIG_PATH
+Need the following env vars set (full path on the system):
+WEZTERM_CONFIG_FILE = ./wezterm/.wezterm.lua
+GLAZEWM_CONFIG_PATH = ./glazewm/.glzr/glazewm/config.yaml
+ZEBAR_CONFIG_DIR = ./glazewm/.glzr/zebar
+configs = .
 
 
 CTRL is for wezterm movement

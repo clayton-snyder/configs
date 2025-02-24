@@ -10,7 +10,7 @@ general:
 
   # Commands to run after the WM config is reloaded.
 #CMS: I use RefreshEnv here so I can see updates to ZEBAR_CONFIG_DIR without restarting glaze.
-  config_reload_commands: ['shell-exec --hide-window cmd /V:ON /C taskkill /IM zebar.exe /F & RefreshEnv && zebar startup --config-dir !ZEBAR_CONFIG_DIR!'] 
+  config_reload_commands: ['shell-exec --hide-window cmd /V:ON /C taskkill /IM zebar.exe /F & !configs!/RefreshEnv && zebar startup --config-dir !ZEBAR_CONFIG_DIR!'] 
 
   # Whether to automatically focus windows underneath the cursor.
   focus_follows_cursor: false
@@ -273,7 +273,7 @@ keybindings:
   # Launch CMD terminal. Alternatively, use `shell-exec wt` or
   # `shell-exec %ProgramFiles%/Git/git-bash.exe` to start Windows
   # Terminal and Git Bash respectively.
-  - commands: ["shell-exec wezterm-gui --config-file C:\\Users\\snyde\\dev\\configs\\wezterm\\.wezterm.lua"]
+  - commands: ["shell-exec wezterm-gui --config-file %WEZTERM_CONFIG_FILE%"]
     bindings: ['alt+enter']
 
   # Focus the next/previous active workspace defined in `workspaces` config.
