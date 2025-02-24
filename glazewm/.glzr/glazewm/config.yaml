@@ -123,28 +123,31 @@ window_behavior:
 
 workspaces:
   - name: "1"
-    display_name: "1 gwm-cs"
+    display_name: "1 term"
     keep_alive: true
   - name: "2"
     display_name: "2 code"
     keep_alive: true
   - name: "3"
-    display_name: "3 browser"
+    display_name: "3 code"
     keep_alive: true
   - name: "4"
-    display_name: "4 gwm-cfg"
+    display_name: "4 brow"
     keep_alive: true
   - name: "5"
-    display_name: "5 wez-cfg"
+    display_name: "5 note"
     keep_alive: true
   - name: "6"
-    display_name: "6"
+    display_name: "6 verc"
+    keep_alive: true
   - name: "7"
-    display_name: "7"
+    display_name: "7 chat"
+    keep_alive: true
   - name: "8"
-    display_name: "8"
+    display_name: "8 mail"
+    keep_alive: true
   - name: "9"
-    display_name: "9 wez-cs"
+    display_name: "9 misc"
     keep_alive: true
 
 window_rules:
