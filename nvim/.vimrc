@@ -1,6 +1,9 @@
 set nu
 set relativenumber
 
+set guicursor=""
+set cursorline
+
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
@@ -31,4 +34,7 @@ nnoremap("<C-d>", "<C-d>zz")
 nnoremap("<C-u>", "<C-u>zz")
 nnoremap("n", "nzzzv")
 nnoremap("N", "Nzzzv")
+
+" CMS mine below here
+set showcmd
 
