@@ -1,8 +1,11 @@
 set nu
 set relativenumber
 
-set guicursor=""
-set cursorline
+highlight rCursor guifg=white guibg=red
+highlight nCursor guifg=white guibg=blue
+highlight iCursor guifg=blue guibg=yellow
+set guicursor=n-v-c:block-nCursor-blinkon0-blinkwait0-blinkoff0,i:hor50-iCursor-blinkwait50-blinkon200-blinkoff50
+" set cursorline
 
 set tabstop=4
 set softtabstop=4
@@ -21,14 +24,14 @@ set undofile
 set nohlsearch
 set incsearch
 
-set termguicolors
+" set termguicolors
 
 set scrolloff=8
 set signcolumn
 
 set updatetime=50
 
-set colorcolumn="120"
+" set colorcolumn="120"
 
 nnoremap("<C-d>", "<C-d>zz")
 nnoremap("<C-u>", "<C-u>zz")

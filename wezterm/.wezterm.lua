@@ -112,6 +112,11 @@ config.keys = {
 	},
 	{
 		key = "w",
+		mods = "CTRL|SHIFT",
+		action = act.Nop,
+	},
+	{
+		key = "w",
 		mods = "LEADER",
 		action = act.CloseCurrentPane{ confirm = true },
 	},
