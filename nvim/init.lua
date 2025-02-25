@@ -20,7 +20,7 @@ vim.opt.wrap = true
 
 -- CMS?vim.opt.swapfile = false
 -- CMS?vim.opt.backup = false
-vim.opt.undodir = "~/.vim/undo-dir"
+vim.opt.undodir = os.getenv("USERPROFILE") .. "\\.vim\\undo-dir"
 vim.opt.undofile = true
 
 vim.opt.hlsearch = false

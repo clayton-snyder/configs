@@ -47,9 +47,5 @@ Ctrl+T (bc of tag stack)
 Alt+F  (keep as fullscreen mode)
 
 ADD TO CONFIG REPO:
-* PowerToys plugin? At least a folder containing the zips
 * ReadMe? Specify which environment variables to set
-
-
-
 
