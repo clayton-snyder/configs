@@ -70,7 +70,7 @@ config.leader = { key = 'Escape', mods = 'SHIFT', timeout_milliseconds = 1000 }
 config.keys = {
 	{
 		key = "h",
-		mods = "LEADER",
+		mods = "CTRL|ALT",
 		action = wezterm.action.SplitPane({
 			direction = "Left",
 			size = { Percent = 50 },
@@ -78,7 +78,7 @@ config.keys = {
 	},
 	{
 		key = "j",
-		mods = "LEADER",
+		mods = "CTRL|ALT",
 		action = wezterm.action.SplitPane({
 			direction = "Down",
 			size = { Percent = 50 },
@@ -86,7 +86,7 @@ config.keys = {
 	},
 	{
 		key = "k",
-		mods = "LEADER",
+		mods = "CTRL|ALT",
 		action = wezterm.action.SplitPane({
 			direction = "Up",
 			size = { Percent = 50 },
@@ -94,7 +94,7 @@ config.keys = {
 	},
 	{
 		key = "l",
-		mods = "LEADER",
+		mods = "CTRL|ALT",
 		action = wezterm.action.SplitPane({
 			direction = "Right",
 			size = { Percent = 50 },
@@ -102,12 +102,12 @@ config.keys = {
 	},
 	{
 		key = "t",
-		mods = "LEADER",
+		mods = "CTRL",
 		action = act.SpawnTab "CurrentPaneDomain",
 	},
 	{
-		key = "q",
-		mods = "LEADER",
+		key = "w",
+		mods = "CTRL",
 		action = act.CloseCurrentTab { confirm = true },
 	},
 	{
@@ -116,8 +116,8 @@ config.keys = {
 		action = act.Nop,
 	},
 	{
-		key = "w",
-		mods = "LEADER",
+		key = "q",
+		mods = "CTRL",
 		action = act.CloseCurrentPane{ confirm = true },
 	},
 	{
@@ -171,8 +171,8 @@ config.keys = {
 		action = act.AdjustPaneSize({ "Left", 5 }),
 	},
 	{
-		key = "U",
-		mods = "ALT|SHIFT",
+		key = "J",
+		mods = "CTRL|SHIFT",
 		action = act.AdjustPaneSize({ "Down", 5 }),
 	},
 	{
@@ -188,8 +188,8 @@ config.keys = {
 	{ key = "9", mods = "CTRL", action = act.PaneSelect },
 	{ key = "`", mods = "CTRL", action = act.ShowDebugOverlay },
 	{
-		key = "O",
-		mods = "CTRL|ALT",
+		key = "o",
+		mods = "LEADER",
 		-- toggling opacity
 		action = wezterm.action_callback(function(window, _)
 			local overrides = window:get_config_overrides() or {}

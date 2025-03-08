@@ -4,7 +4,7 @@ print("yooooooooooooooo")
 -- highlight nCursor guifg=white guibg=blue
 -- highlight iCursor guifg=blue guibg=yellow
 -- vim.opt.guicursor = n-v-c:block-nCursor-blinkon0-blinkwait0-blinkoff0,i:hor50-iCursor-blinkwait50-blinkon200-blinkoff50
--- vim.opt.cursorline = true
+vim.opt.cursorline = true
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
@@ -27,6 +27,15 @@ vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
 vim.opt.termguicolors = true
+
+-- May want to turn this off when you choose a different theme
+vim.cmd [[
+  highlight Normal guibg=none
+  highlight NonText guibg=none
+  highlight Normal ctermbg=none
+  highlight NonText ctermbg=none
+]]
+
 
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"

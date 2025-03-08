@@ -5,7 +5,7 @@ highlight rCursor guifg=white guibg=red
 highlight nCursor guifg=white guibg=blue
 highlight iCursor guifg=blue guibg=yellow
 set guicursor=n-v-c:block-nCursor-blinkon0-blinkwait0-blinkoff0,i:hor50-iCursor-blinkwait50-blinkon200-blinkoff50
-" set cursorline
+set cursorline
 
 set tabstop=4
 set softtabstop=4
