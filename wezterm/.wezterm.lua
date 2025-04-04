@@ -101,6 +101,11 @@ config.keys = {
 		}),
 	},
 	{
+		key = "w",
+		mods = "CTRL|ALT",
+		action = act.CloseCurrentPane{ confirm = true },
+	},
+	{
 		key = "t",
 		mods = "CTRL",
 		action = act.SpawnTab "CurrentPaneDomain",
@@ -114,11 +119,6 @@ config.keys = {
 		key = "w",
 		mods = "CTRL|SHIFT",
 		action = act.Nop,
-	},
-	{
-		key = "q",
-		mods = "CTRL",
-		action = act.CloseCurrentPane{ confirm = true },
 	},
 	{
 		key = "Tab",
