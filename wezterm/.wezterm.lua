@@ -185,6 +185,11 @@ config.keys = {
 		mods = "CTRL|SHIFT",
 		action = act.AdjustPaneSize({ "Right", 5 }),
 	},
+    {
+        key = 'r',
+        mods = 'CTRL|SHIFT',
+        action = wezterm.action.ReloadConfiguration,
+    },
 	{ key = "9", mods = "CTRL", action = act.PaneSelect },
 	{ key = "`", mods = "CTRL", action = act.ShowDebugOverlay },
 	{
@@ -274,6 +279,13 @@ config.initial_cols = 80
 -- 	-- window:gui_window():maximize()
 -- 	-- window:gui_window():set_position(0, 0)
 -- end)
+
+config.set_environment_variables = {
+  -- This changes the default prompt for cmd.exe to report the
+  -- current directory using OSC 7, show the current time and
+  -- the current directory colored in the prompt.
+  prompt = '$E]7;file://localhost/$P$E\\$E[32m$T$E[0m $E[35m$P$E[36m$_$G$E[0m ',
+}
 
 -- and finally, return the configuration to wezterm
 return config
