@@ -8,25 +8,12 @@ configs = .
 Install terminal icons:
 `Install-Module -Name Terminal-Icons -Repository PSGallery`
 
-And place this somewhere in your PowerShell profile chain, e.g., in `$profile`:
-Put these two in your PowerShell profile chain somewhere:
+Install oh my posh (prompt theme engine):
+(NOTE: Oh My Posh will break new panes copying the working directory for now, I
+need to figure out how to integrate osc7 between wez and OMP)
+`winget install JanDeDobbeleer.OhMyPosh -s winget`
 
-(turns on terminal icons)
-`Import-Module -Name Terminal-Icons`
-
-(new panes keep working directory)
-`
-function prompt {
-    $p = $executionContext.SessionState.Path.CurrentLocation
-    $osc7 = ""
-    if ($p.Provider.Name -eq "FileSystem") {
-        $ansi_escape = [char]27
-        $provider_path = $p.ProviderPath -Replace "\\", "/"
-        $osc7 = "$ansi_escape]7;file://${env:COMPUTERNAME}/${provider_path}${ansi_escape}\"
-    }
-    "${osc7}PS $p$('>' * ($nestedPromptLevel + 1)) ";
-}
-`
+Put `profile.ps1` somewhere on your PowerShell profile path (e.g., at $profile)
 
 CTRL is for wezterm movement (except CTRL+[T/W] for tabs)
 CTRL+ALT is for wezterm creation/destruction
@@ -65,6 +52,6 @@ Alt+T  (keep as toggle mode)
 Ctrl+T (bc of tag stack)
 Alt+F  (keep as fullscreen mode)
 
-ADD TO CONFIG REPO:
-* ReadMe? Specify which environment variables to set
+TODO:
+* Set PowerShell `$profile` directly from config directory. 
 
