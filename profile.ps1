@@ -2,15 +2,21 @@ function prompt {
     $p = $executionContext.SessionState.Path.CurrentLocation
     $osc7 = ""
     if ($p.Provider.Name -eq "FileSystem") {
-        $ansi_escape = [char]27
-        $provider_path = $p.ProviderPath -Replace "\\", "/"
-        $osc7 = "$ansi_escape]7;file://${env:COMPUTERNAME}/${provider_path}${ansi_escape}\"
+        $esc = [char]27
+        $path = $p.ProviderPath -Replace "\\", "/"
+        $osc7 = "$esc]7;file://${env:COMPUTERNAME}/${path}${esc}\"
     }
-    "${osc7}PS $p$('>' * ($nestedPromptLevel + 1)) ";
+    # Purple date/time, green curr dir, newline, yellow bold intense caret.
+    # See ansi color codes and escape sequences for how to format this.
+    "${osc7}$esc[35m$(Get-Date -Format "MM-dd HH:mm:ss")$esc[0m $esc[32m$p$esc[1;93m$([char]13 + [char]10 + '>' * ($nestedPromptLevel + 1)) $esc[0m";
 }
 
+# Might be worth modifying these, some of them are annoying (like a folder
+# called "Fonts" having a font icon; it's a folder, just show a folder!").
 Import-Module -Name Terminal-Icons
 
-# Oh My Posh disabled for now until I figure out how to integrate new panes
-# changing working directory.
+# Oh My Posh is cool but I'm disabling it until a time that I find it more 
+# useful because I need to do some work to figure out how to set the current
+# working directory for new wezterm panes. Doesn't work OOB.
 # oh-my-posh init pwsh | Invoke-Expression
+
