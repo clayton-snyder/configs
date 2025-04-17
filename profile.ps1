@@ -1,3 +1,8 @@
+# Re-map prev/next command to Ctrl+[p/n] because arrows are hard to press. Also
+# adds prefix searching.
+Set-PSReadLineKeyHandler -Chord Ctrl+p -Function HistorySearchBackward
+Set-PSReadLineKeyHandler -Chord Ctrl+n -Function HistorySearchForward
+
 function prompt {
     $p = $executionContext.SessionState.Path.CurrentLocation
     $osc7 = ""
@@ -19,4 +24,3 @@ Import-Module -Name Terminal-Icons
 # useful because I need to do some work to figure out how to set the current
 # working directory for new wezterm panes. Doesn't work OOB.
 # oh-my-posh init pwsh | Invoke-Expression
-
