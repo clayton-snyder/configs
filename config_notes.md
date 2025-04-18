@@ -5,16 +5,34 @@ configs = .
 `ZEBAR_CONFIG_DIR` = ./glazewm/.glzr/zebar
 `XDG_CONFIG_DIR` = %configs%
 
-Install terminal icons:
+### Terminal-Icons
+
+#### Install:
 `Install-Module -Name Terminal-Icons -Repository PSGallery`
+
+#### Add custom icon theme:
+Edit `$Env:configs\terminal-icons\devblackops_custom.psd1` to your liking (or
+add an entirely new theme).
+
+`Add-TerminalIconsIconTheme "$Env:configs\terminal-icons\devblackops_custom.psd1"`
+
+Run `Get-TerminalIconsIconTheme`, ensure `devblackops_custom` is listed.
+
+`Set-TerminalIconsTheme -IconTheme "devblackops_custom"`
+
+You can do the same customization with colors if you want.
+
+### Oh My Posh (prompt theme engine)
 
 Install oh my posh (prompt theme engine):
 (NOTE: Oh My Posh will break new panes copying the working directory for now, I
 need to figure out how to integrate osc7 between wez and OMP)
 `winget install JanDeDobbeleer.OhMyPosh -s winget`
 
+### Powershell Profile
 Put `profile.ps1` somewhere on your PowerShell profile path (e.g., at $profile)
 
+### Wezterm and GWM notes
 CTRL is for wezterm movement (except CTRL+[T/W] for tabs)
 CTRL+ALT is for wezterm creation/destruction
 ALT is for gwm
