@@ -1,7 +1,8 @@
 # Re-map prev/next command to Ctrl+[p/n] because arrows are hard to press. Also
 # adds prefix searching.
 Set-PSReadLineKeyHandler -Chord Ctrl+p -Function HistorySearchBackward
-Set-PSReadLineKeyHandler -Chord Ctrl+n -Function HistorySearchForward
+Set-PSReadLineKeyHandler -Chord Ctrl+n -Function HistorySearchForward 
+Set-PSReadLineOption -HistorySearchCursorMovesToEnd
 
 function prompt {
     $p = $executionContext.SessionState.Path.CurrentLocation
