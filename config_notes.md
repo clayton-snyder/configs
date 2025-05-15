@@ -8,8 +8,10 @@ configs = .
 Path to brave.exe should be on PATH. To use a different browser, change the
 alt+b mapping in glaze's config.yaml
 
-install IosevkaCustom font by dragging all the TTFs into the area specified in
-Windows font settings
+install IosevkaCustomClike font by dragging all the TTFs into the area
+specified in Windows font settings.
+The regular IosevkaCustom uses Haskell ligations which displays /= as not equal.
+The build plan in fonts changes ligations to clike.
 
 install PowerToys and apply the settings backup file
 

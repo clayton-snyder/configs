@@ -15,7 +15,7 @@ config.animation_fps = 1
 config.cursor_blink_rate = 500
 config.term = "xterm-256color" -- Set the terminal type
 
-config.font = wezterm.font("Iosevka Custom Extended")
+config.font = wezterm.font("Iosevka Custom (clike) Extended")
 -- config.font = wezterm.font("Monocraft Nerd Font")
 -- config.font = wezterm.font("FiraCode Nerd Font Mono")
 -- config.font = wezterm.font("JetBrains Mono Regular")
