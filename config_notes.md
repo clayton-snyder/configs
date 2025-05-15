@@ -3,7 +3,12 @@ configs = .
 `WEZTERM_CONFIG_FILE` = ./wezterm/.wezterm.lua
 `GLAZEWM_CONFIG_PATH` = ./glazewm/.glzr/glazewm/config.yaml
 `ZEBAR_CONFIG_DIR` = ./glazewm/.glzr/zebar
-`XDG_CONFIG_DIR` = %configs%
+`XDG_CONFIG_HOME` = %configs%
+
+install IosevkaCustom font by dragging all the TTFs into the area specified in
+Windows font settings
+
+install PowerToys and apply the settings backup file
 
 ### Terminal-Icons
 
