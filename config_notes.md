@@ -5,6 +5,9 @@ configs = .
 `ZEBAR_CONFIG_DIR` = ./glazewm/.glzr/zebar
 `XDG_CONFIG_HOME` = %configs%
 
+Path to brave.exe should be on PATH. To use a different browser, change the
+alt+b mapping in glaze's config.yaml
+
 install IosevkaCustom font by dragging all the TTFs into the area specified in
 Windows font settings
 
