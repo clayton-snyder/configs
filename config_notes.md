@@ -15,6 +15,9 @@ The build plan in fonts changes ligations to clike.
 
 install PowerToys and apply the settings backup file
 
+Add location of Launch-VsDevShell.ps1 to PATH. Call it when you want to use `cl`
+e.g., C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\Tools
+
 ### Terminal-Icons
 
 #### Install:
