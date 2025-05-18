@@ -33,7 +33,7 @@
                 src                     = 'nf-oct-terminal'
                 development             = 'nf-oct-terminal'
                 # projects                = 'nf-seti-project'
-                bin                     = 'nf-oct-file_binary'
+                # bin                     = 'nf-oct-file_binary'
                 tests                   = 'nf-md-test_tube'
                 windows                 = 'nf-fa-windows'
                 users                   = 'nf-fa-users'
