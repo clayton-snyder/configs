@@ -1,4 +1,4 @@
-Need the following env vars set (full path on the system):
+ANeed the following env vars set (full path on the system):
 configs = .
 `WEZTERM_CONFIG_FILE` = ./wezterm/.wezterm.lua
 `GLAZEWM_CONFIG_PATH` = ./glazewm/.glzr/glazewm/config.yaml

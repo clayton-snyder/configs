@@ -1,5 +1,5 @@
 @{
-    Name  = 'devblackops_custom'
+    Name  = 'devblackops'
     Types = @{
         Directories = @{
             # Default directory icon
@@ -32,8 +32,8 @@
                 downloads               = 'nf-md-folder_download'
                 src                     = 'nf-oct-terminal'
                 development             = 'nf-oct-terminal'
-                # projects                = 'nf-seti-project'
-                # bin                     = 'nf-oct-file_binary'
+                projects                = 'nf-seti-project'
+                bin                     = 'nf-oct-file_binary'
                 tests                   = 'nf-md-test_tube'
                 windows                 = 'nf-fa-windows'
                 users                   = 'nf-fa-users'
