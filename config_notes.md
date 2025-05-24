@@ -8,6 +8,8 @@ configs = .
 Path to brave.exe should be on PATH. To use a different browser, change the
 alt+b mapping in glaze's config.yaml
 
+%configs%/scripts should be on PATH if you want to use the scripts there.
+
 install IosevkaCustomClike font by dragging all the TTFs into the area
 specified in Windows font settings.
 The regular IosevkaCustom uses Haskell ligations which displays /= as not equal.
