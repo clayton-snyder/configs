@@ -1,34 +1,20 @@
 -- Pull in the wezterm API
 local wezterm = require("wezterm")
 local act = wezterm.action
--- local mux = wezterm.mux
 -- This will hold the configuration.
 local config = wezterm.config_builder()
--- local gpus = wezterm.gui.enumerate_gpus()
--- config.webgpu_preferred_adapter = gpus[1]
--- config.front_end = "WebGpu"
 
 config.front_end = "OpenGL"
 config.max_fps = 144
 config.default_cursor_style = "BlinkingBlock"
-config.animation_fps = 1
-config.cursor_blink_rate = 500
+config.animation_fps = 60
+config.cursor_blink_rate = 800
+config.cursor_blink_ease_in = "Linear"
+config.cursor_blink_ease_out = "Linear"
 config.term = "xterm-256color" -- Set the terminal type
 
 config.font = wezterm.font("Iosevka Custom (clike) Extended")
--- config.font = wezterm.font("Monocraft Nerd Font")
--- config.font = wezterm.font("FiraCode Nerd Font Mono")
--- config.font = wezterm.font("JetBrains Mono Regular")
 config.cell_width = 0.9
--- config.font = wezterm.font("Menlo Regular")
--- config.font = wezterm.font("Hasklig")
--- config.font = wezterm.font("Monoid Retina")
--- config.font = wezterm.font("InputMonoNarrow")
--- config.font = wezterm.font("mononoki Regular")
--- config.font = wezterm.font("Iosevka")
--- config.font = wezterm.font("M+ 1m")
--- config.font = wezterm.font("Hack Regular")
--- config.cell_width = 0.9
 config.window_background_opacity = 0.9
 config.prefer_egl = true
 config.font_size = 12.0
@@ -50,9 +36,6 @@ config.inactive_pane_hsb = {
  	saturation = 1.0,
  	brightness = 0.3,
 }
-
--- This is where you actually apply your config choices
---
 
 -- color scheme toggling
 wezterm.on("toggle-colorscheme", function(window, pane)
@@ -199,7 +182,7 @@ config.keys = {
 		action = wezterm.action_callback(function(window, _)
 			local overrides = window:get_config_overrides() or {}
 			if overrides.window_background_opacity == 1.0 then
-				overrides.window_background_opacity = 0.9
+				overrides.window_background_opacity = 0.95
 			else
 				overrides.window_background_opacity = 1.0
 			end
@@ -208,23 +191,27 @@ config.keys = {
 	},
 }
 
+config.visual_bell = {
+  fade_in_function = 'EaseIn',
+  fade_in_duration_ms = 150,
+  fade_out_function = 'EaseOut',
+  fade_out_duration_ms = 150,
+}
 -- For example, changing the color scheme:
 config.color_scheme = "Kibble"
 config.colors = {
-	-- background = '#3b224c',
-	-- background = "#181616", -- vague.nvim bg
-	-- background = "#080808", -- almost black
-	--background = "#0c0b0f", -- dark purple
-	-- background = "#020202", -- dark purple
-	-- background = "#17151c", -- brighter purple
-	-- background = "#16141a",
-	-- background = "#0e0e12", -- bright washed lavendar
-	-- background = 'rgba(59, 34, 76, 100%)',
-	cursor_border = "#bea3c7",
-	-- cursor_fg = "#281733",
-	cursor_bg = "#bea3c7",
-	-- selection_fg = '#281733',
+    visual_bell = '#440000',
 
+    cursor_fg = "#281733",
+    cursor_bg = "#ff50ff",
+    cursor_border = "#00ff00",
+--    selection_fg = "black",
+--    selection_bg = "#fffacd",
+    selection_fg = 'rgba(70% 80% 00%)',
+    selection_bg = 'rgba(40% 40% 90% 30%)',
+    scrollbar_thumb = "#00FF00",
+    split = "#444444",
+    compose_cursor = 'green',
 	tab_bar = {
 --		background = "#0c0b0f",
 		background = "#ff0000",
@@ -284,7 +271,7 @@ config.set_environment_variables = {
   -- This changes the default prompt for cmd.exe to report the
   -- current directory using OSC 7, show the current time and
   -- the current directory colored in the prompt.
-  prompt = '$E]7;file://localhost/$P$E\\$E[32m$T$E[0m $E[35m$P$E[36m$_$G$E[0m ',
+--  prompt = '$E]7;file://localhost/$P$E\\$E[32m$T$E[0m $E[35m$P$E[36m$_$G$E[0m ',
 }
 
 -- and finally, return the configuration to wezterm
