@@ -25,17 +25,17 @@ e.g., C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\Tools
 #### Install:
 `Install-Module -Name Terminal-Icons -Repository PSGallery`
 
-#### Add custom icon theme:
-Edit `$Env:configs\terminal-icons\devblackops_custom.psd1` to your liking (or
-add an entirely new theme).
+#### Add custom icon/color theme:
+Edit `$Env:configs\terminal-icons\basic\cs-basic_{icons/colors}.psd1` to your liking (or add an entirely new theme).
 
-`Add-TerminalIconsIconTheme "$Env:configs\terminal-icons\devblackops_custom.psd1"`
+`Add-TerminalIconsIconTheme "$Env:configs\terminal-icons\basic\cs-basic_icons.psd1"`
+`Add-TerminalIconsColorTheme "$Env:configs\terminal-icons\basic\cs-basic_colors.psd1"`
 
-Run `Get-TerminalIconsIconTheme`, ensure `devblackops_custom` is listed.
+Run `Get-TerminalIconsIconTheme` and `Get-TerminalIconsColorTheme`, ensure `cs-basic` is listed for both.
 
-`Set-TerminalIconsTheme -IconTheme "devblackops_custom"`
+`Set-TerminalIconsTheme -IconTheme "cs-basic"`
+`Set-TerminalIconsTheme -ColorTheme "cs-basic"`
 
-You can do the same customization with colors if you want.
 
 ### Oh My Posh (prompt theme engine)
 
