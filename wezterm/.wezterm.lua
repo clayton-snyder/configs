@@ -173,6 +173,46 @@ config.keys = {
         mods = 'CTRL|SHIFT',
         action = wezterm.action.ReloadConfiguration,
     },
+	{
+		key = " ",
+		mods = "CTRL",
+		action = wezterm.action.SendKey({
+			key = " ",
+			mods = "CTRL",
+		}),
+	},
+	{
+		key = " ",
+		mods = "CTRL|ALT",
+		action = wezterm.action.SendKey({
+			key = " ",
+			mods = "CTRL|ALT",
+		}),
+	},
+	{
+		key = " ",
+		mods = "SHIFT",
+		action = wezterm.action.SendKey({
+			key = " ",
+			mods = "SHIFT",
+		}),
+	},
+	{
+		key = "Backspace",
+		mods = "SHIFT",
+		action = wezterm.action.SendKey({
+			key = "Backspace",
+			mods = "SHIFT",
+		}),
+	},
+	{
+		key = " ",
+		mods = "ALT",
+		action = wezterm.action.SendKey({
+			key = " ",
+			mods = "ALT",
+		}),
+	},
 	{ key = "9", mods = "CTRL", action = act.PaneSelect },
 	{ key = "`", mods = "CTRL", action = act.ShowDebugOverlay },
 	{

@@ -31,10 +31,10 @@ vim.opt.termguicolors = true
 
 -- May want to turn this off when you choose a different theme
 vim.cmd [[
-  highlight Normal guibg=none
-  highlight NonText guibg=none
-  highlight Normal ctermbg=none
-  highlight NonText ctermbg=none
+         highlight Normal guibg=none
+         highlight NonText guibg=none
+         highlight Normal ctermbg=none
+         highlight NonText ctermbg=none
 ]]
 
 
@@ -44,18 +44,52 @@ vim.opt.signcolumn = "yes"
 vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "80"
-
+       
 vim.g.mapleader = " "
+      
+-- Open just enough fold to reveal search term. Useful if I ever enable folding.
+vim.keymap.set("n", "n", "nzv")
+vim.keymap.set("n", "N", "Nzv")
 
--- vim.keymap.set("n", "<C-d>", "<C-d>zz")
--- vim.keymap.set("n", "<C-u>", "<C-u>zz")
-vim.keymap.set("n", "n", "nzzzv")
-vim.keymap.set("n", "N", "Nzzzv")
-vim.keymap.set("n", "<C-_>", ":s/\\(.*\\)/\\/\\/ \\1<Enter>")
-vim.keymap.set("n", "<C-G>", ":s/^\\/\\/[ ]//<Enter>")
-vim.keymap.set("x", "<C-_>", ":s/\\(.*\\)/\\/\\/ \\1<Enter>")
-vim.keymap.set("x", "<C-G>", ":s/^\\/\\/[ ]//<Enter>")
 
--- CMS mine below here
+---:: A lot of stuff below here, especially combos of CTRL/ALT/SHIFT w/ <Space>
+---:: and <BS>, relies on custom keymappings in my Wezterm config that detect
+---:: these key combos and forward them with wezterm.action.SendKey(). Thank you
+---:: Wez for making that easy.
+
+-- <SHIFT+[Space/BS]> mimics insert mode for those keys.
+vim.keymap.set("n", "<S-Space>", "i <ESC>l")
+vim.keymap.set("n", "<S-BS>", "hx")
+
+--------------- Custom Spacing Shortcuts ---------------
+---:: These all try to adjust the cursor according to the change. Sometimes
+---:: it's going to be off by a couple if it's not deterministic.
+
+-- <CTRL+/> adds "// " to beginning of line
+-- <CTRL+'> removes "// " preceded by any amount of spaces and preserving them.
+vim.keymap.set("n", "<C-_>", "mt:s/\\(.*\\)/\\/\\/ \\1<Enter>`t3l")
+vim.keymap.set("n", "<C-G>", "mt:s/\\(^ *\\)\\/\\/[ ]/\\1/<Enter>`t3h")
+
+-- <CTRL+[Space/BS]> adds/removes one space from beginning of line
+vim.keymap.set("n", "<C-Space>", "mt:s/\\(.*\\)/ \\1/<Enter>`tl")
+vim.keymap.set("n", "<C-H>", "mt:s/^ //<Enter>`th")
+
+
+-- <CTRL+ALT+[Space/BS]> adds/removes four spaces from beginning of line.
+vim.keymap.set("n", "<C-A-Space>", "mt0i    <ESC>`t4l")
+vim.keymap.set("n", "<C-A-H>", "mt:s/^ \\{0,4\\}//<Enter>`t4h")
+
+---:: These are the same as above but for multi-line visual mode selection.
+---:: They restore the visual selection after the modification and attempt to 
+---:: adjust the cursor location accordingly.
+vim.keymap.set("x", "<C-_>", ":s/\\(.*\\)/\\/\\/ \\1<Enter>gv3l")
+vim.keymap.set("x", "<C-G>", ":s/\\(^ *\\)\\/\\/[ ]/\\1/e<Enter>gv3h")
+vim.keymap.set("x", "<C-Space>", ":s/\\(.*\\)/ \\1/<Enter>gvl")
+vim.keymap.set("x", "<C-H>", ":s/^ //<Enter>gvh")
+vim.keymap.set("x", "<C-A-Space>", ":s/\\(.*\\)/    \\1/<Enter>gv4l")
+vim.keymap.set("x", "<C-A-H>", ":s/^ \\{0,4\\}//<Enter>gv4h")
+--------------------------------------------------------
+
+
 vim.opt.showcmd = true
 
