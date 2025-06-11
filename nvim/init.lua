@@ -51,6 +51,10 @@ vim.g.mapleader = " "
 -- vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
+vim.keymap.set("n", "<C-_>", ":s/\\(.*\\)/\\/\\/ \\1<Enter>")
+vim.keymap.set("n", "<C-G>", ":s/^\\/\\/[ ]//<Enter>")
+vim.keymap.set("x", "<C-_>", ":s/\\(.*\\)/\\/\\/ \\1<Enter>")
+vim.keymap.set("x", "<C-G>", ":s/^\\/\\/[ ]//<Enter>")
 
 -- CMS mine below here
 vim.opt.showcmd = true
