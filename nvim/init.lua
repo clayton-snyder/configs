@@ -51,6 +51,9 @@ vim.g.mapleader = " "
 vim.keymap.set("n", "n", "nzv")
 vim.keymap.set("n", "N", "Nzv")
 
+vim.keymap.set("i", "<C-e>", "<ESC><C-e>a");
+vim.keymap.set("i", "<C-y>", "<ESC><C-y>a");
+
 
 ---:: A lot of stuff below here, especially combos of CTRL/ALT/SHIFT w/ <Space>
 ---:: and <BS>, relies on custom keymappings in my Wezterm config that detect
