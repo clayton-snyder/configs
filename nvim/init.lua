@@ -38,7 +38,7 @@ vim.cmd [[
 ]]
 
 
-vim.opt.scrolloff = 8
+vim.opt.scrolloff = 5
 vim.opt.signcolumn = "yes"
 
 vim.opt.updatetime = 50
