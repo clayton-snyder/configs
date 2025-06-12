@@ -73,7 +73,7 @@ vim.keymap.set("n", "<S-BS>", "hx")
 vim.keymap.set("n", "<C-_>", "mt:s#\\(.*\\)#// \\1<Enter>`t3l")
 vim.keymap.set("i", "<C-_>", "<ESC>mt:s#\\(.*\\)#// \\1<Enter>`t3la")
 vim.keymap.set("n", "<C-G>", "mt:s#\\(^ *\\)// \\{0,1}\\( *\\)#\\1\\2<Enter>`t3h")
-vim.keymap.set("i", "<C-G>", "<ESC>:s#\\(^ *\\)// \\{0,1}\\( *\\)#\\1\\2<Enter>`A")
+vim.keymap.set("i", "<C-G>", "<ESC>:s#\\(^ *\\)// \\{0,1}\\( *\\)#\\1\\2<Enter>A")
 
 -- <CTRL+[Space/BS]> adds/removes one space from beginning of line
 vim.keymap.set("n", "<C-Space>", "mt:s/\\(.*\\)/ \\1/<Enter>`tl")
