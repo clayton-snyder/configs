@@ -68,7 +68,9 @@ vim.keymap.set("n", "<S-BS>", "hx")
 -- <CTRL+/> adds "// " to beginning of line
 -- <CTRL+'> removes "// " preceded by any amount of spaces and preserving them.
 vim.keymap.set("n", "<C-_>", "mt:s/\\(.*\\)/\\/\\/ \\1<Enter>`t3l")
-vim.keymap.set("n", "<C-G>", "mt:s/\\(^ *\\)\\/\\/[ ]/\\1/<Enter>`t3h")
+vim.keymap.set("n", "<C-G>", "mt:s/\\(^ *\\)\\/\\/ */\\1/<Enter>`t3h")
+vim.keymap.set("i", "<C-G>", "<ESC>:s/\\/\\/ *//<Enter>i")
+
 
 -- <CTRL+[Space/BS]> adds/removes one space from beginning of line
 vim.keymap.set("n", "<C-Space>", "mt:s/\\(.*\\)/ \\1/<Enter>`tl")
@@ -83,7 +85,7 @@ vim.keymap.set("n", "<C-A-H>", "mt:s/^ \\{0,4\\}//<Enter>`t4h")
 ---:: They restore the visual selection after the modification and attempt to 
 ---:: adjust the cursor location accordingly.
 vim.keymap.set("x", "<C-_>", ":s/\\(.*\\)/\\/\\/ \\1<Enter>gv3l")
-vim.keymap.set("x", "<C-G>", ":s/\\(^ *\\)\\/\\/[ ]/\\1/e<Enter>gv3h")
+vim.keymap.set("x", "<C-G>", ":s/\\(^ *\\)\\/\\/ */\\1/e<Enter>gv3h")
 vim.keymap.set("x", "<C-Space>", ":s/\\(.*\\)/ \\1/<Enter>gvl")
 vim.keymap.set("x", "<C-H>", ":s/^ //<Enter>gvh")
 vim.keymap.set("x", "<C-A-Space>", ":s/\\(.*\\)/    \\1/<Enter>gv4l")
