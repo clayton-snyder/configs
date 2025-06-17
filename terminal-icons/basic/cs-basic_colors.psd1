@@ -1,13 +1,15 @@
 ## A rough mapping of color semantics:
-# human readable data - denim 00BFFF
+# human readable data - skyblue/denim 259DF9
 # binary/not human readable data (zip, bundles, etc) - gold DAA520
 # special data files (keys, certs, fonts, etc) - tomato CD5C5C
 # config - yellow FFD700
 # primary source - brightblue 00FBFF
-# secondary source (html, xml, md, etc.) - blue 2535F9
+# secondary source (html, xml, md, etc.) - skyblue/denim 259DF9
 # binaries - brightgreen 00FA9A
-# scripts - red FF4500
+# scripts - magenta FF50FF
 # artifacts - gray A9A9A9
+# logs - bluegray 8CA8BD
+# I like this; not sure what for though. Something welcoming. softpink FBCAFF
 
 @{
     Name  = 'cs-basic'
@@ -17,8 +19,8 @@
             junction = '7373ff'
             WellKnown = @{
                 desktop                 = '00FBFF'
-                src                     = '00FBFF'
                 bin                     = '00FA9A'
+                built                   = 'A9A9A9'
                 '.config'               = '87CEAF'
                 '.cache'                = '87ECAF'
                 '.vscode'               = '87CEFA'
@@ -66,7 +68,7 @@
                 '.npmrc'                        = 'FFD700'
 
                 # Authors
-                'authors'                       = '00BFFF'
+                'authors'                       = '259DF9'
             }
             # Archive files
             '.7z'                   = 'DAA520'
@@ -83,12 +85,12 @@
             '.tgz'                  = 'DAA520'
 
             # Executable things
-            '.bat'                  = 'FF4500'
-            '.cmd'                  = 'FF4500'
+            '.bat'                  = 'FF50FF'
+            '.cmd'                  = 'FF50FF'
             '.exe'                  = '00FA9A'
-            '.pl'                   = 'FF4500'
+            '.pl'                   = 'FF50FF'
 
-            '.sh'                   = 'FF4500'
+            '.sh'                   = 'FF50FF'
 
             # App Packages
             '.msi'                  = 'DAA520'
@@ -100,12 +102,12 @@
             '.rpm'                  = 'DAA520'
 
             # PowerShell
-            '.ps1'                  = 'FF4500'
-            '.psm1'                 = 'FF4500'
-            '.psd1'                 = '00BFFF'
-            '.ps1xml'               = '00BFFF'
-            '.psc1'                 = '00BFFF'
-            '.pssc'                 = '00BFFF'
+            '.ps1'                  = 'FF50FF'
+            '.psm1'                 = 'FF50FF'
+            '.psd1'                 = '259DF9'
+            '.ps1xml'               = '259DF9'
+            '.psc1'                 = '259DF9'
+            '.pssc'                 = '259DF9'
 
             # Javascript
             '.js'                   = '00FBFF'
@@ -119,8 +121,8 @@
             '.gradle'               = 'FFD700'
 
             # Python
-            '.py'                   = 'FF4500'
-            '.ipynb'                = '00BFFF'
+            '.py'                   = 'FF50FF'
+            '.ipynb'                = '259DF9'
 
 
             # React
@@ -134,9 +136,9 @@
             '.dll'                  = 'DAA520'
 
             # Importable Data files
-            '.clixml'               = '00BFFF'
-            '.csv'                  = '00BFFF'
-            '.tsv'                  = '00BFFF'
+            '.clixml'               = '259DF9'
+            '.csv'                  = '259DF9'
+            '.tsv'                  = '259DF9'
 
             # Settings
             '.ini'                  = 'FFD700'
@@ -188,14 +190,14 @@
             '.hs'                   = '00FBFF'
 
             # XAML
-            '.xaml'                 = '2535F9'
+            '.xaml'                 = '259DF9'
 
             # Rust
             '.rs'                   = '00FBFF'
 
             # Database
             '.pdb'                  = 'DAA520'
-            '.sql'                  = '2535F9'
+            '.sql'                  = '259DF9'
             '.pks'                  = 'FFD700'
             '.pkb'                  = 'FFD700'
             '.accdb'                = 'FFD700'
@@ -207,31 +209,32 @@
             '.db'                   = 'FFD700'
 
             # Source Control
-            '.patch'                = '00BFFF'
+            '.patch'                = '259DF9'
 
             # Project files
             '.user'                 = 'FFD700'
             '.code-workspace'       = 'FFD700'
 
             # Text data files
-            '.log'                  = '00BFFF'
-            '.txt'                  = '00BFFF'
+            '.log'                  = '8CA8BD'
+            '.txt'                  = 'CAE8FF'
+#            '.txt'                  = 'FBCAFF'
 
             # HTML/css
-            '.html'                 = '2535F9'
-            '.htm'                  = '2535F9'
-            '.xhtml'                = '2535F9'
-            '.html_vm'              = '2535F9'
-            '.asp'                  = '2535F9'
-            '.css'                  = '2535F9'
-            '.sass'                 = '2535F9'
-            '.scss'                 = '2535F9'
-            '.less'                 = '2535F9'
+            '.html'                 = '259DF9'
+            '.htm'                  = '259DF9'
+            '.xhtml'                = '259DF9'
+            '.html_vm'              = '259DF9'
+            '.asp'                  = '259DF9'
+            '.css'                  = '259DF9'
+            '.sass'                 = '259DF9'
+            '.scss'                 = '259DF9'
+            '.less'                 = '259DF9'
 
             # Markdown
-            '.md'                   = '2535F9'
-            '.markdown'             = '2535F9'
-            '.rst'                  = '2535F9'
+            '.md'                   = '259DF9'
+            '.markdown'             = '259DF9'
+            '.rst'                  = '259DF9'
 
             # JSON
             '.json'                 = 'FFD700'
@@ -245,18 +248,18 @@
             '.lua'                  = '00FBFF'
 
             # XML
-            '.xml'                  = '2535F9'
-            '.plist'                = '2535F9'
-            '.xsd'                  = '2535F9'
-            '.dtd'                  = '2535F9'
-            '.xsl'                  = '2535F9'
-            '.xslt'                 = '2535F9'
-            '.resx'                 = '2535F9'
-            '.iml'                  = '2535F9'
-            '.xquery'               = '2535F9'
-            '.tmLanguage'           = '2535F9'
-            '.manifest'             = '2535F9'
-            '.project'              = '2535F9'
+            '.xml'                  = '259DF9'
+            '.plist'                = '259DF9'
+            '.xsd'                  = '259DF9'
+            '.dtd'                  = '259DF9'
+            '.xsl'                  = '259DF9'
+            '.xslt'                 = '259DF9'
+            '.resx'                 = '259DF9'
+            '.iml'                  = '259DF9'
+            '.xquery'               = '259DF9'
+            '.tmLanguage'           = '259DF9'
+            '.manifest'             = '259DF9'
+            '.project'              = '259DF9'
 
             # Audio
             '.mp3'                  = 'DB7093'
