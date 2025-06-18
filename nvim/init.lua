@@ -83,11 +83,12 @@ vim.keymap.set("n", "<C-H>", "mt:s/^ //<Enter>`th")
 vim.keymap.set("n", "<C-A-Space>", "mt0i    <ESC>`t4l")
 vim.keymap.set("n", "<C-A-H>", "mt:s/^ \\{0,4\\}//<Enter>`t4h")
 
+
 ---:: These are the same as above but for multi-line visual mode selection.
 ---:: They restore the visual selection after the modification and attempt to 
 ---:: adjust the cursor location accordingly.
 vim.keymap.set("x", "<C-_>", ":s#\\(.*\\)#// \\1<Enter>gv3l")
-vim.keymap.set("x", "<C-G>", ":s#\\(^ *\\)// *#\\1#e<Enter>gv3h")
+vim.keymap.set("x", "<C-G>", ":s#\\(^ *\\)// \\{0,1}\\( *\\)#\\1\\2#e<Enter>gv3h")
 vim.keymap.set("x", "<C-Space>", ":s/\\(.*\\)/ \\1/<Enter>gvl")
 vim.keymap.set("x", "<C-H>", ":s/^ //<Enter>gvh")
 vim.keymap.set("x", "<C-A-Space>", ":s/\\(.*\\)/    \\1/<Enter>gv4l")
