@@ -1,26 +1,39 @@
-ANeed the following env vars set (full path on the system):
-configs = .
+## Environment Variables / PATH
+Need the following env vars set (full path on the system):
+
+configs = \<dir of this repo\>
 `WEZTERM_CONFIG_FILE` = ./wezterm/.wezterm.lua
 `GLAZEWM_CONFIG_PATH` = ./glazewm/.glzr/glazewm/config.yaml
 `ZEBAR_CONFIG_DIR` = ./glazewm/.glzr/zebar
 `XDG_CONFIG_HOME` = %configs%
 
-Path to brave.exe should be on PATH. To use a different browser, change the
-alt+b mapping in glaze's config.yaml
-
-%configs%/scripts should be on PATH if you want to use the scripts there.
-
-install IosevkaCustomClike font by dragging all the TTFs into the area
-specified in Windows font settings.
-The regular IosevkaCustom uses Haskell ligations which displays /= as not equal.
-The build plan in fonts changes ligations to clike.
-
-install PowerToys and apply the settings backup file
-
 Add location of Launch-VsDevShell.ps1 to PATH. Call it when you want to use `cl`
 e.g., C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\Tools
 
-### Terminal-Icons
+Path to brave.exe should be on PATH. To use a different browser, change the
+alt+b mapping in glaze's config.yaml
+
+**NOTE**: Launching Brave via Glaze shortcut doesn't work if Glaze is in admin
+mode. It launches to a blank screen. No clue why. Thankfully Glaze doesn't
+need to be in admin mode.
+
+`%configs%/scripts` should be on PATH if you want to use the scripts there.
+
+
+## Fonts
+Install `IosevkaCustomClike` font by dragging all the TTFs into the area
+specified in Windows font settings.
+
+The regular `IosevkaCustom` uses Haskell ligations which displays `/=` as not
+equal. The build plan in `fonts` changes ligations to `clike`.
+
+## PowerToys 
+Install PowerToys and apply the settings backup file.
+
+
+## Terminal Customization
+
+### TerminalIcons
 
 #### Install:
 `Install-Module -Name Terminal-Icons -Repository PSGallery`
@@ -45,9 +58,11 @@ need to figure out how to integrate osc7 between wez and OMP)
 `winget install JanDeDobbeleer.OhMyPosh -s winget`
 
 ### Powershell Profile
+
 Put `profile.ps1` somewhere on your PowerShell profile path (e.g., at $profile)
 
-### Wezterm and GWM notes
+## Wezterm and GWM notes
+
 CTRL is for wezterm movement (except CTRL+[T/W] for tabs)
 CTRL+ALT is for wezterm creation/destruction
 ALT is for gwm
