@@ -42,11 +42,13 @@ Install PowerToys and apply the settings backup file.
 Edit `$Env:configs\terminal-icons\basic\cs-basic_{icons/colors}.psd1` to your liking (or add an entirely new theme).
 
 `Add-TerminalIconsIconTheme "$Env:configs\terminal-icons\basic\cs-basic_icons.psd1"`
+
 `Add-TerminalIconsColorTheme "$Env:configs\terminal-icons\basic\cs-basic_colors.psd1"`
 
 Run `Get-TerminalIconsIconTheme` and `Get-TerminalIconsColorTheme`, ensure `cs-basic` is listed for both.
 
 `Set-TerminalIconsTheme -IconTheme "cs-basic"`
+
 `Set-TerminalIconsTheme -ColorTheme "cs-basic"`
 
 
